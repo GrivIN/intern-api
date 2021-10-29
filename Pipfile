@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 requests = "*"
-py-healthcheck = "*"
-flask = "*"
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
 
 [dev-packages]
 
