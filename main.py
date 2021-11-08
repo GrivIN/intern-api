@@ -1,11 +1,10 @@
 import json
 import random
 
-JOKES_LIBRARY = json.load(open("jokes.json"))
+with open("jokes.json") as f:
+    data = json.load(f)
 
-
-for joke in JOKES_LIBRARY["jokes"]:
-    allthejokes = joke
+randomjoke = random.choice(data["jokes"])
 
 from fastapi import FastAPI
 
@@ -21,7 +20,7 @@ def health():
 
 @app.get("/jokes")
 def jokes():
-    return JOKES_LIBRARY
+    return data
 
 @app.get("/jokes/random")
 def jokes():

@@ -17,5 +17,9 @@ def test_health():
 def test_jokes():
     response = client.get("/jokes")
     assert response.status_code == 200
-    assert response.json() == JOKES_LIBRARY_JSON
+    assert response.json() == data
 
+def test_random_jokes():
+    response = client.get("/jokes/random")
+    assert response.status_code == 200
+    assert response.json() == randomjoke
