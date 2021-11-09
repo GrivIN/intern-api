@@ -4,8 +4,6 @@ import random
 with open("jokes.json") as f:
     data = json.load(f)
 
-randomjoke = random.choice(data["jokes"])
-
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -23,5 +21,6 @@ def jokes():
     return data
 
 @app.get("/jokes/random")
-def jokes():
-    return randomjoke
+def jokes_random():
+    return random.choice(data["jokes"])
+ 
