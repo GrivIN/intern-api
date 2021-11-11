@@ -21,7 +21,8 @@ def test_jokes():
 
 def test_random_jokes():
     response = client.get("/jokes/random")
-    assert response.status_code == 200
-    
-    while data["jokes"] != data["jokes"]:
-        assert response.json() == random.choice(data["jokes"])
+    contains = response.json() in data["jokes"]
+    while contains == True:
+        pass
+    while contains == False:
+        raise ValueError

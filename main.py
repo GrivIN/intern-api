@@ -22,5 +22,6 @@ def jokes():
 
 @app.get("/jokes/random")
 def jokes_random():
-    return random.choice(data["jokes"])
+    randomjoke = random.choice(data["jokes"])
+    return randomjoke
  
