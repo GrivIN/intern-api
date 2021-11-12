@@ -23,6 +23,15 @@ def test_random_jokes():
     response = client.get("/jokes/random")
     contains = response.json() in data["jokes"]
     while contains == True:
-        pass
+        assert contains == True
     while contains == False:
-        raise ValueError
+        raise AssertionError
+
+def test_same_random_jokes():
+    response1 = client.get("/jokes")
+    response2 = client.get("/jokes")
+    result = response1 != response2
+    while result == True:
+        assert result == True
+    while result == False:
+        raise AssertionError
