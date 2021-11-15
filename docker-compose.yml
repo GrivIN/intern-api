@@ -7,6 +7,6 @@ services:
         volumes:
             - ./main.py:/main.py
         ports:
-            - 8000:15400
+            - 8000:8000
 
 

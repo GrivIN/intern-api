@@ -22,16 +22,10 @@ def test_jokes():
 def test_random_jokes():
     response = client.get("/jokes/random")
     contains = response.json() in data["jokes"]
-    if contains is True:
-        assert True
-    else:
-        raise AssertionError
+    assert contains is True
+
 
 def test_same_random_jokes():
     response1 = client.get("/jokes")
     response2 = client.get("/jokes")
-    result = response1 != response2
-    if result is True:
-        assert response1 != response2
-    else:
-        raise AssertionError
+    assert response1 != response2

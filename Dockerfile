@@ -14,4 +14,4 @@ COPY jokes.json .
 
 COPY main.py .
 
-CMD [ "uvicorn", "./main.py", "--host", "0.0.0.0", "--port", "15400" ]
+CMD [ "uvicorn", "./main.py", "--host", "0.0.0.0", "--port", "8000" ]
